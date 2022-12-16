@@ -28,6 +28,7 @@ export const Post = (props: Props) => {
   const likesRef = collection(dbData, "likes");
   const likeDoc = query(likesRef, where("postId", "==", post.id));
 
+
   const getLikes = async () => {
     const data = await getDocs(likeDoc);
     setLikes(
@@ -81,13 +82,17 @@ export const Post = (props: Props) => {
     getLikes();
   }, []);
 
+
+
+  
+
   return (
     <div>
       <div className="title">
         <h1>{post.title}</h1>
       </div>
       <div className="body">
-        <h1>{post.description}</h1>
+        <h2>{post.description}</h2>
       </div>
       <div className="footer">
         <p> @{post.username}</p>
@@ -98,6 +103,7 @@ export const Post = (props: Props) => {
           {hasUserLiked ? <>&#128078;</> : <>&#128077;</>}{" "}
         </button>
         {likes && <p>Likes: {likes.length}</p>}
+        {<hr className="solid"></hr>}
       </div>
     </div>
   );

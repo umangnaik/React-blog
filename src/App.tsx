@@ -5,6 +5,7 @@ import { Main } from './main/main';
 import { Login } from './pages/Login';
 import { Navbar } from './components/navbar';
 import { CreatePost } from "./pages/create-post/CreatePost"
+import { ScrollToTop } from "./components/scrollToTop"
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ function App() {
           <Route path = "/createpost" element={<CreatePost/>}>
           </Route>
         </Routes>
+        <ScrollToTop/>
       </Router>
     </div>
   );
